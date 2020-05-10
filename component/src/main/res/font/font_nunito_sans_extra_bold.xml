@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="800"
+        android:font="@font/nunito_sans_bold_extra"
+
+        app:fontStyle="normal"
+        app:fontWeight="800"
+        app:font="@font/nunito_sans_bold_extra"/>
+    <font
+        android:fontStyle="italic"
+        android:fontWeight="800"
+        android:font="@font/nunito_sans_bold_extra_italic"
+
+        app:fontStyle="italic"
+        app:fontWeight="800"
+        app:font="@font/nunito_sans_bold_extra_italic"/>
+</font-family>

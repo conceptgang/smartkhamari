@@ -1,0 +1,4 @@
+include ':sample'
+include ':component'
+include ':app'
+rootProject.name = "Smart Khamari"

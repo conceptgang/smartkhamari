@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.AppComponent.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="textAppearanceHeadline1">@style/TextAppearance.AppComponent.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.AppComponent.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.AppComponent.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.AppComponent.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.AppComponent.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.AppComponent.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.AppComponent.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.AppComponent.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.AppComponent.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.AppComponent.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.AppComponent.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.AppComponent.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.AppComponent.Overline</item>
+
+        <item name="colorOnSurface">@color/textColor</item>
+        <item name="colorOnBackground">@color/textColor</item>
+
+    </style>
+
+</resources>

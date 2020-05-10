@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.COMPILE_SDK_VERSION
+    buildToolsVersion rootProject.BUILD_TOOL_VERSION
+
+    defaultConfig {
+        minSdkVersion rootProject.MIN_SDK_VERSION
+        targetSdkVersion rootProject.TARGET_SDK_VERSION
+        versionCode rootProject.COMPONENT_VERSION_CODE
+        versionName rootProject.COMPONENT_VERSION
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures{
+        viewBinding = true
+    }
+
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libs.activity
+    implementation libs.appcompat
+    implementation libs.coil
+    implementation libs.constraintLayout
+    implementation libs.epoxy
+    kapt           libs.epoxy_processor
+    implementation libs.fragment
+    implementation libs.kotlin
+    implementation libs.ktx
+    implementation libs.lifecycle_viewmodel
+    implementation libs.lifecycle_runtime
+    implementation libs.lifecycle_livedata
+    implementation libs.lottie
+    implementation libs.material
+
+    // Test Libraries
+    testImplementation libs.junit
+    androidTestImplementation libs.junitx
+    androidTestImplementation libs.espresso
+}
