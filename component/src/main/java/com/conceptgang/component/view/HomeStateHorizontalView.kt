@@ -8,7 +8,6 @@ import com.airbnb.epoxy.AfterPropsSet
 import com.airbnb.epoxy.CallbackProp
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
-import com.conceptgang.component.databinding.HomeStateVerticalBinding
 import com.conceptgang.component.databinding.WidgetHomeStateHorizontalBinding
 import com.conceptgang.component.model.HomeStateHorizontalViewData
 import com.conceptgang.component.util.px

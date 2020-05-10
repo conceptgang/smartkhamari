@@ -14,7 +14,7 @@ import com.conceptgang.component.util.px
 import com.conceptgang.component.model.ViewCallback
 import com.google.android.material.card.MaterialCardView
 
-@ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
+@ModelView(autoLayout = ModelView.Size.WRAP_WIDTH_WRAP_HEIGHT)
 class ProductListView : MaterialCardView {
 
     constructor(context: Context) : super(context) {

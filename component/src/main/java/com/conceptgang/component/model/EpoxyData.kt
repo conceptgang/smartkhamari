@@ -26,8 +26,8 @@ data class EpoxyData(
     ): this(padding, padding, padding, padding, android.R.color.background_light, hasDividerBottom, hasDividerTop)
 
     companion object {
-        val SMALL = EpoxyData(16,0)
-        val MEDIUM = EpoxyData(32, 0)
+        val SMALL = EpoxyData(16,8)
+        val MEDIUM = EpoxyData(32, 8)
     }
 
 }

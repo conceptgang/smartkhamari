@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.conceptgang.component.model.ViewData
+import com.conceptgang.component.model.*
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val layoutList = ArrayList<Pair<String, Class<out Fragment>>>()
-        layoutList.add(Pair("Raw Comp", RawComponentFragment::class.java))
         layoutList.add(Pair("First Page", FirstFragment::class.java))
+        layoutList.add(Pair("Raw Comp", RawComponentFragment::class.java))
         layoutList.add(Pair("Second Page", SecondFragment::class.java))
         layoutList.add(Pair("Third Page", ThirdFragment::class.java))
 
@@ -48,6 +48,20 @@ class MainActivity : AppCompatActivity() {
 class FirstFragment : BaseFragment(){
     override val viewData: List<ViewData> = listOf(
 
+        CowProfileViewData(),
+        InvestorViewData(),
+        HomeStateHorizontalViewData(),
+        HomeStateVerticalViewData(),
+        SearchViewData(),
+        DailySellItemViewData(),
+        CowHealthListViewData(),
+        StockListViewData(),
+        OrderListViewData(),
+        CostItemViewData(),
+        FoodListViewData(),
+        StateSummeryViewData(),
+        ProductListViewData(),
+        BioSprayViewData()
 
     )
 }
