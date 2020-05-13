@@ -2,4 +2,6 @@
 <resources>
 
 
+    <dimen name="demo_margin_horizontal">16dp</dimen>
+    <dimen name="demo_margin_vertical">16dp</dimen>
 </resources>

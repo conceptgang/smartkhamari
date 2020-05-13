@@ -1,8 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.conceptgang.sample.fragment.RawComponentFragment">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,8 +9,16 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-
-
+        <include layout="@layout/widget_menu_header"/>
+        <include layout="@layout/widget_menu_footer"/>
+        <include layout="@layout/widget_menu_item"/>
+        <include layout="@layout/widget_home_detail_state"/>
+        <include layout="@layout/widget_khamari_edit_text"/>
+        <include layout="@layout/widget_khamari_selection"/>
+        <include layout="@layout/widget_khamari_selection_date"/>
+        <include layout="@layout/widget_khamari_price_input"/>
+        <include layout="@layout/widget_customer_hisotry_header"/>
+        <include layout="@layout/widget_customer_history_unit"/>
 
 
     </LinearLayout>

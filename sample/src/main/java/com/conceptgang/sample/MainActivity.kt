@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val layoutList = ArrayList<Pair<String, Class<out Fragment>>>()
-        layoutList.add(Pair("First Page", FirstFragment::class.java))
         layoutList.add(Pair("Raw Comp", RawComponentFragment::class.java))
+        layoutList.add(Pair("First Page", FirstFragment::class.java))
         layoutList.add(Pair("Second Page", SecondFragment::class.java))
         layoutList.add(Pair("Third Page", ThirdFragment::class.java))
 
