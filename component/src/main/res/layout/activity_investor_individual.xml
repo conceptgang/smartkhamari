@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
-            android:text="MILK"
+            android:text="SERGIO RAMOS"
             android:textColor="#ffffff"
             android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
             android:id="@+id/textView76"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PRODT1245"
+            android:text="CUS1245"
             android:textColor="#ffffff"
             android:textSize="18dp"
             android:textStyle="italic"
@@ -53,9 +53,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView75" />
 
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
-            android:layout_height="620dp"
+            android:layout_height="680dp"
             android:layout_marginStart="18dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="17dp"
@@ -72,11 +73,11 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/imageView10"
                     android:layout_width="310dp"
                     android:layout_height="180dp"
                     android:layout_marginTop="15dp"
-                    android:src="@drawable/milk"
+                    android:src="@drawable/investor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -87,11 +88,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="26dp"
-                    android:text="SOURCE"
+                    android:text="MOBILE NUMBER"
                     android:textSize="12dp"
                     android:textStyle="bold|italic"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
                 <TextView
                     android:id="@+id/textView78"
@@ -99,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="2dp"
-                    android:text="From Own Firm"
+                    android:text="01712455885"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -110,8 +111,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
-                    android:layout_marginTop="18dp"
-                    android:text="AVAILABLE QUANTITY"
+                    android:layout_marginTop="16dp"
+                    android:text="EMAIL ADDRESS"
                     android:textSize="12dp"
                     android:textStyle="bold|italic"
                     app:layout_constraintStart_toStartOf="parent"
@@ -124,12 +125,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="2dp"
-                    android:text="20 L"
+                    android:text="Sergio@ramos.com"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView79" />
-
 
                 <TextView
                     android:id="@+id/textView81"
@@ -137,12 +137,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="16dp"
-                    android:text="Unit Price"
+                    android:text="VOTER ID"
                     android:textSize="12dp"
                     android:textStyle="bold|italic"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView80" />
-
 
                 <TextView
                     android:id="@+id/textView82"
@@ -150,20 +149,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="2dp"
-                    android:text="৳ 40.00"
+                    android:text="1992 1454 1546 6985 1245"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView81" />
-
 
                 <TextView
                     android:id="@+id/textView83"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
-                    android:layout_marginTop="14dp"
-                    android:text="Selling Times"
+                    android:layout_marginTop="24dp"
+                    android:text="ADDRESS"
                     android:textSize="12dp"
                     android:textStyle="bold|italic"
                     app:layout_constraintStart_toStartOf="parent"
@@ -171,13 +169,15 @@
 
                 <TextView
                     android:id="@+id/textView84"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="2dp"
-                    android:text="120"
+                    android:layout_marginEnd="14dp"
+                    android:text="Nil Bariya, House No 601, 5th Floor, Rd: 09, Baitul Aman Housing Society, Adabor, Mohammadpur Dhaka."
                     android:textColor="@color/black"
                     android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView83" />
 
@@ -187,7 +187,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="12dp"
-                    android:text="INCOME"
+                    android:text="JOINING DATE"
                     android:textSize="12dp"
                     android:textStyle="bold|italic"
                     app:layout_constraintStart_toStartOf="parent"
@@ -199,29 +199,42 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="2dp"
-                    android:text="৳ 95,319.00"
+                    android:text="12 Mar, 2019"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView85" />
 
-                <RadioButton
+                <TextView
+                    android:id="@+id/textView87"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
-                    android:layout_marginTop="45dp"
-                    android:text="Marked as Out of Stock"
+                    android:layout_marginTop="24dp"
+                    android:text="PARTNER TYPE"
+                    android:textSize="12dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView86" />
+
+                <TextView
+                    android:id="@+id/textView88"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Regular"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView86" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView87" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>

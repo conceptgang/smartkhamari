@@ -3,7 +3,9 @@
     package="com.conceptgang.component">
 
     <application>
-        <activity android:name=".IndividualProducts"></activity>
+        <activity android:name=".BioSpray"></activity>
+        <activity android:name=".InvestorIndividual" />
+        <activity android:name=".IndividualProducts" />
         <activity android:name=".ExpensePopup" />
         <activity android:name=".MainActivity4" />
         <activity android:name=".MainActivity3" />
