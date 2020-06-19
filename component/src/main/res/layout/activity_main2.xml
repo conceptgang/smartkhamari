@@ -35,7 +35,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="340dp"
-            android:layout_height="930dp"
+            android:layout_height="960dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="90dp"
             android:background="@drawable/big_card"
