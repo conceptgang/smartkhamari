@@ -88,7 +88,7 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
                         android:background="@null"
-                        android:hint="Search by Cow ID.."
+                        android:hint="Search by Customer ID.."
                         android:textColor="@color/textColor"
                         android:textSize="14sp" />
 
