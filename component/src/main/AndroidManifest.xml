@@ -3,7 +3,8 @@
     package="com.conceptgang.component">
 
     <application>
-        <activity android:name=".HealthRecord"></activity>
+        <activity android:name=".Siemens"></activity>
+        <activity android:name=".HealthRecord" />
         <activity android:name=".ExpensePage" />
         <activity android:name=".BillReceived" />
         <activity android:name=".SellPage" />
