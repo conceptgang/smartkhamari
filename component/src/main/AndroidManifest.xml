@@ -3,7 +3,8 @@
     package="com.conceptgang.component">
 
     <application>
-        <activity android:name=".BioSpray"></activity>
+        <activity android:name=".Menus"></activity>
+        <activity android:name=".BioSpray" />
         <activity android:name=".InvestorIndividual" />
         <activity android:name=".IndividualProducts" />
         <activity android:name=".ExpensePopup" />
