@@ -3,7 +3,9 @@
     package="com.conceptgang.component">
 
     <application>
-        <activity android:name=".FeedStock"></activity>
+        <activity android:name=".Reminders"></activity>
+        <activity android:name=".NutritionMatrix" />
+        <activity android:name=".FeedStock" />
         <activity android:name=".HrCost" />
         <activity android:name=".BioSprayRecord" />
         <activity android:name=".Investors" />
