@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_big">32dp</dimen>
+    <dimen name="margin_big_extra">40dp</dimen>
+    <dimen name="navigation_icon_size">25dp</dimen>
 
     <dimen name="demo_margin_horizontal">16dp</dimen>
     <dimen name="demo_margin_vertical">16dp</dimen>

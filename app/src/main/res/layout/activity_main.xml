@@ -16,16 +16,27 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
+        <!--Add Appbar , BottomAppBar, FAB or BottomNavigationView here-->
+
+
         <fragment
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:defaultNavHost="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:navGraph="@navigation/nav_graph" />
 
-        <!--Add Appbar , BottomAppBar, FAB or BottomNavigationView here-->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+            android:layout_margin="@dimen/margin_normal"
+            android:background="@drawable/big_card"
+            app:menu="@menu/bottom_navigation_menu" />
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
@@ -62,10 +73,20 @@
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
+        app:itemIconTint="?colorPrimary"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:itemIconSize="15dp" />
+        app:headerLayout="@layout/sidenav_header"
+        app:menu="@menu/side_navigation_menu"
+        app:itemTextAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:itemIconSize="@dimen/navigation_icon_size" >
+
+        <include
+            android:id="@+id/sideNavFooterInclude"
+            layout="@layout/sidenav_footer"/>
+
+    </com.google.android.material.navigation.NavigationView>
 
     <!--
         <include

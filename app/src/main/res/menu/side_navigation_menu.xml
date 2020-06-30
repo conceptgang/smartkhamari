@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavBill"
+            android:icon="@drawable/bill"
+            android:title="Bill Receive" />
+    </group>
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavHealth"
+            android:icon="@drawable/health"
+            android:title="Health Record" />
+    </group>
+    <group
+        android:id="@+id/grp3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavSiemens"
+            android:icon="@drawable/siemens"
+            android:title="Siemens" />
+    </group>
+    <group
+        android:id="@+id/grp4"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavProduct"
+            android:icon="@drawable/products"
+            android:title="Products" />
+    </group>
+    <group
+        android:id="@+id/grp6"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavInvest"
+            android:icon="@drawable/invest"
+            android:title="Invest" />
+    </group>
+    <group
+        android:id="@+id/grp7"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavSpray"
+            android:icon="@drawable/biospray"
+            android:title="Bio Spray Record" />
+    </group>
+    <group
+        android:id="@+id/grp8"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavHR"
+            android:icon="@drawable/hrcost"
+            android:title="HR Cost" />
+    </group>
+    <group
+        android:id="@+id/grp9"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavFeedStock"
+            android:icon="@drawable/feedstock"
+            android:title="Feed Stock" />
+    </group>
+    <group
+        android:id="@+id/grp10"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavStatistics"
+            android:icon="@drawable/statistics"
+            android:title="Statistics" />
+    </group>
+    <group
+        android:id="@+id/grp11"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavLiveStock"
+            android:icon="@drawable/stock"
+            android:title="Sell Live Stock" />
+    </group>
+    <group
+        android:id="@+id/grp12"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavNutrition"
+            android:icon="@drawable/nutrition"
+            android:title="Nutrition Matrix" />
+    </group>
+    <group
+        android:id="@+id/grp13"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavAdvanceOrder"
+            android:icon="@drawable/bag"
+            android:title="Advance Order" />
+    </group>
+    <group
+        android:id="@+id/grp14"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavReminder"
+            android:icon="@drawable/reminder"
+            android:title="Reminder of Due" />
+    </group>
+    <group
+        android:id="@+id/grp15"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/sideNavBottom"
+            android:title="" />
+    </group>
+</menu>
