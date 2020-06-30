@@ -2,30 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.conceptgang.component">
 
-    <application>
-        <activity android:name=".Reminders"></activity>
-        <activity android:name=".NutritionMatrix" />
-        <activity android:name=".FeedStock" />
-        <activity android:name=".HrCost" />
-        <activity android:name=".BioSprayRecord" />
-        <activity android:name=".Investors" />
-        <activity android:name=".Products" />
-        <activity android:name=".Siemens" />
-        <activity android:name=".HealthRecord" />
-        <activity android:name=".ExpensePage" />
-        <activity android:name=".BillReceived" />
-        <activity android:name=".SellPage" />
-        <activity android:name=".ListCustomer" />
-        <activity android:name=".CowHouse" />
-        <activity android:name=".Menus" />
-        <activity android:name=".BioSpray" />
-        <activity android:name=".InvestorIndividual" />
-        <activity android:name=".IndividualProducts" />
-        <activity android:name=".ExpensePopup" />
-        <activity android:name=".MainActivity4" />
-        <activity android:name=".MainActivity3" />
-        <activity android:name=".MainActivity2" />
-        <activity android:name=".MainActivity" />
-    </application>
+    <application></application>
 
 </manifest>
