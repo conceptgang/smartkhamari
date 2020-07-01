@@ -2,4 +2,8 @@
     <string name="app_name">Smart Khamari</string>
     <string name="full_name">Full Name</string>
     <string name="sign_up">Sign Up</string>
+    <string name="confirm_your_number">Confirm your number</string>
+    <string name="wrong_otp">You have entered wrong otp</string>
+    <string name="send_another_otp_code">Send another otp code</string>
+    <string name="otp_subtitle">We have send an otp to %1$s. \nNot your phone number? Change</string>
 </resources>
