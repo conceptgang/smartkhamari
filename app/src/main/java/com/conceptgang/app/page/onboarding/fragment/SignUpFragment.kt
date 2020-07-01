@@ -10,11 +10,13 @@ import com.conceptgang.app.R
 import com.conceptgang.app.base.BaseFragment
 import com.conceptgang.app.databinding.FragmentSignupBinding
 import com.conceptgang.app.page.onboarding.viewmodel.OnBoardingViewModel
+import com.conceptgang.component.dialog.ZHDialog
+import com.conceptgang.component.dialog.ZHDialogType
 import com.conceptgang.component.util.isValidPhoneNumber
 import com.conceptgang.component.util.isValidPhoneNumberWithCode
 import timber.log.Timber
 
-class SignUpFragment : BaseFragment(){
+class SignUpFragment : BaseFragment() {
 
     private lateinit var binding: FragmentSignupBinding
     private val onBoardingViewModel by activityViewModel(OnBoardingViewModel::class)
@@ -36,7 +38,7 @@ class SignUpFragment : BaseFragment(){
             var isValid = true
 
             val fullName = binding.fullNameEditText.text.toString()
-            if(fullName.isEmpty()){
+            if (fullName.isEmpty()) {
                 isValid = false
                 binding.fullNameEditTextLayout.error = getString(R.string.name_cant_empty)
             }
@@ -44,13 +46,13 @@ class SignUpFragment : BaseFragment(){
             val khamariName = binding.khamarNameEditText.text.toString()
 
             var phoneNumber = binding.phoneEditText.text.toString()
-            if(phoneNumber.isValidPhoneNumber) phoneNumber = "+88$phoneNumber"
-            if(!phoneNumber.isValidPhoneNumberWithCode){
+            if (phoneNumber.isValidPhoneNumber) phoneNumber = "+88$phoneNumber"
+            if (!phoneNumber.isValidPhoneNumberWithCode) {
                 isValid = false
                 binding.phoneEditTextLayout.error = getString(R.string.inalid_phone_number)
             }
 
-            if(isValid){
+            if (isValid) {
                 onBoardingViewModel.fullName = fullName
                 onBoardingViewModel.khamariName = khamariName
                 onBoardingViewModel.sendOtp(phoneNumber)
@@ -64,7 +66,7 @@ class SignUpFragment : BaseFragment(){
 
     override fun invalidate() = withState(onBoardingViewModel) { state ->
 
-        when(val sendOtpResult = state.otpSent){
+        when (val sendOtpResult = state.otpSent) {
 
 
             is Loading -> {
@@ -72,8 +74,20 @@ class SignUpFragment : BaseFragment(){
             }
 
             is Fail -> {
-                Timber.d(sendOtpResult.error)
+                Timber.e(sendOtpResult.error)
                 binding.progressBarInclude.progressBarInclude.visibility = View.GONE
+                val dialog = ZHDialog(
+                    R.drawable.question,
+                    getString(R.string.oops),
+                    getString(R.string.something_went_wrong),
+                    ZHDialogType.YesDialog(
+                        onYes = { },
+                        onClick = { }
+                    ),
+                    positiveTitle = "Try Again"
+                )
+
+                dialog.show(childFragmentManager, "SHOW")
             }
 
             is Success -> {

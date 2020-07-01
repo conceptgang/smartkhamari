@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialogContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zh_dialog_bg">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dialogCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/taalaDialogContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="37dp">
+
+            <ImageView
+                android:id="@+id/cancelImage"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                android:contentDescription="@string/close_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_clear" />
+
+
+            <ImageView
+                android:id="@+id/iconImage"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/question" />
+
+
+            <TextView
+                android:id="@+id/headerTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/TextAppearance.AppComponent.Headline6"
+                android:textColor="?attr/colorOnSurface"
+                app:layout_constraintBottom_toBottomOf="@+id/iconImage"
+                app:layout_constraintStart_toEndOf="@+id/iconImage"
+                app:layout_constraintTop_toTopOf="@+id/iconImage"
+                tools:text="Order Link Copied" />
+
+
+            <TextView
+                android:id="@+id/messageTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="6dp"
+                android:textAppearance="@style/TextAppearance.AppComponent.Body1"
+                android:textColor="?attr/colorOnSurface"
+                app:layout_constraintEnd_toStartOf="@+id/cancelImage"
+                app:layout_constraintStart_toStartOf="@+id/iconImage"
+                app:layout_constraintTop_toBottomOf="@+id/iconImage"
+                tools:text="Now you can paste of give this order link to your buyer for payment" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/noBtn"
+                style="@style/Widget.AppComponent.Button.DialogCancel"
+                android:layout_marginTop="@dimen/margin_big"
+                android:text="@string/no"
+                app:layout_constraintStart_toStartOf="@+id/messageTxt"
+                app:layout_constraintTop_toBottomOf="@+id/messageTxt" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/yesBtn"
+                style="@style/Widget.AppComponent.Button.DialogOk"
+                android:layout_marginTop="@dimen/margin_big"
+                android:text="@string/yes"
+                app:layout_constraintEnd_toStartOf="@id/cancelImage"
+                app:layout_constraintTop_toBottomOf="@+id/messageTxt" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

@@ -11,4 +11,6 @@
     <string name="do_not_have_account_sign_up">Do not have account? Sign Up</string>
     <string name="inalid_phone_number">Invalid phone number</string>
     <string name="name_cant_empty">Name can\'t be empty</string>
+    <string name="oops">Oops!</string>
+    <string name="something_went_wrong">Something went wrong. Make sure you have working network connection</string>
 </resources>

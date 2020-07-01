@@ -10,11 +10,13 @@ import com.conceptgang.app.R
 import com.conceptgang.app.base.BaseFragment
 import com.conceptgang.app.databinding.FragmentSigninBinding
 import com.conceptgang.app.page.onboarding.viewmodel.OnBoardingViewModel
+import com.conceptgang.component.dialog.ZHDialog
+import com.conceptgang.component.dialog.ZHDialogType
 import com.conceptgang.component.util.isValidPhoneNumber
 import com.conceptgang.component.util.isValidPhoneNumberWithCode
 import timber.log.Timber
 
-class SignInFragment : BaseFragment(){
+class SignInFragment : BaseFragment() {
 
     private lateinit var binding: FragmentSigninBinding
 
@@ -38,10 +40,10 @@ class SignInFragment : BaseFragment(){
 
         binding.signInBtn.setOnClickListener {
             var phoneNumber = binding.phoneEditText.text.toString()
-            if(phoneNumber.isValidPhoneNumber) phoneNumber = "+88$phoneNumber"
-            if(!phoneNumber.isValidPhoneNumberWithCode){
+            if (phoneNumber.isValidPhoneNumber) phoneNumber = "+88$phoneNumber"
+            if (!phoneNumber.isValidPhoneNumberWithCode) {
                 binding.phoneEditTextLayout.error = getString(R.string.inalid_phone_number)
-            }else{
+            } else {
                 onBoardingViewModel.sendOtp(phoneNumber)
             }
 
@@ -51,7 +53,7 @@ class SignInFragment : BaseFragment(){
 
     override fun invalidate() = withState(onBoardingViewModel) { state ->
 
-        when(val sendOtpResult = state.otpSent){
+        when (val sendOtpResult = state.otpSent) {
 
 
             is Loading -> {
@@ -59,8 +61,21 @@ class SignInFragment : BaseFragment(){
             }
 
             is Fail -> {
-                Timber.d(sendOtpResult.error)
+                Timber.e(sendOtpResult.error)
                 binding.progressBarInclude.progressBarInclude.visibility = View.GONE
+                val dialog = ZHDialog(
+                    R.drawable.question,
+                    getString(R.string.oops),
+                    getString(R.string.something_went_wrong),
+                    ZHDialogType.YesDialog(
+                        onYes = { },
+                        onClick = { }
+                    ),
+                    positiveTitle = "Try Again"
+                )
+
+                dialog.show(childFragmentManager, "SHOW")
+
             }
 
             is Success -> {

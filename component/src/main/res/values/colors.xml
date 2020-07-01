@@ -8,4 +8,5 @@
     <color name="green">#3AB54A</color>
     <color name="surface">#F3F3F3</color>
     <color name="ground_back">#E6EFE8</color>
+    <color name="zh_dialog_bg">#E6FFFFFF</color>
 </resources>
