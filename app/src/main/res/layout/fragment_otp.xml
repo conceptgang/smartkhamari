@@ -6,6 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include android:id="@+id/progressBarInclude"
+        layout="@layout/widget_loading"/>
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -42,7 +45,7 @@
 
     <com.poovam.pinedittextfield.LinePinField
         android:id="@+id/otpView"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="64dp"
         android:imeOptions="actionDone"
@@ -59,7 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signUpSubTitle"
         app:lineThickness="1dp"
-        app:noOfFields="4" />
+        app:noOfFields="6" />
 
     <TextView
         android:id="@+id/wrongOtpTxt"
@@ -68,7 +71,7 @@
         android:text="@string/wrong_otp"
         android:textAppearance="@style/TextAppearance.AppComponent.Caption"
         android:textColor="?attr/colorError"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/otpView" />
@@ -85,7 +88,7 @@
         android:text="@string/send_another_otp_code"
         android:textAppearance="@style/TextAppearance.AppComponent.Headline7"
         android:textColor="?attr/colorPrimary"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wrongOtpTxt" />

@@ -7,11 +7,14 @@ import android.view.View
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import com.conceptgang.app.data.remote.FirebaseAuthClient
 import com.conceptgang.app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+
+    val firebaseAuthClient by lazy {  FirebaseAuthClient(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

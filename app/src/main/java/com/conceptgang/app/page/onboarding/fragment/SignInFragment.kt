@@ -8,15 +8,16 @@ import androidx.navigation.fragment.findNavController
 import com.airbnb.mvrx.*
 import com.conceptgang.app.R
 import com.conceptgang.app.base.BaseFragment
-import com.conceptgang.app.databinding.FragmentSignupBinding
+import com.conceptgang.app.databinding.FragmentSigninBinding
 import com.conceptgang.app.page.onboarding.viewmodel.OnBoardingViewModel
 import com.conceptgang.component.util.isValidPhoneNumber
 import com.conceptgang.component.util.isValidPhoneNumberWithCode
 import timber.log.Timber
 
-class SignUpFragment : BaseFragment(){
+class SignInFragment : BaseFragment(){
 
-    private lateinit var binding: FragmentSignupBinding
+    private lateinit var binding: FragmentSigninBinding
+
     private val onBoardingViewModel by activityViewModel(OnBoardingViewModel::class)
 
     override fun onCreateView(
@@ -24,7 +25,7 @@ class SignUpFragment : BaseFragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSignupBinding.inflate(inflater, container, false)
+        binding = FragmentSigninBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,33 +33,19 @@ class SignUpFragment : BaseFragment(){
         super.onViewCreated(view, savedInstanceState)
 
         binding.signUpBtn.setOnClickListener {
-
-            var isValid = true
-
-            val fullName = binding.fullNameEditText.text.toString()
-            if(fullName.isEmpty()){
-                isValid = false
-                binding.fullNameEditTextLayout.error = getString(R.string.name_cant_empty)
-            }
-
-            val khamariName = binding.khamarNameEditText.text.toString()
-
-            var phoneNumber = binding.phoneEditText.text.toString()
-            if(phoneNumber.isValidPhoneNumber) phoneNumber = "+88$phoneNumber"
-            if(!phoneNumber.isValidPhoneNumberWithCode){
-                isValid = false
-                binding.phoneEditTextLayout.error = getString(R.string.inalid_phone_number)
-            }
-
-            if(isValid){
-                onBoardingViewModel.fullName = fullName
-                onBoardingViewModel.khamariName = khamariName
-                onBoardingViewModel.sendOtp(phoneNumber)
-            }
+            findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToSignUpFragment())
         }
 
         binding.signInBtn.setOnClickListener {
-            findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToSignInFragment())
+            var phoneNumber = binding.phoneEditText.text.toString()
+            if(phoneNumber.isValidPhoneNumber) phoneNumber = "+88$phoneNumber"
+            if(!phoneNumber.isValidPhoneNumberWithCode){
+                binding.phoneEditTextLayout.error = getString(R.string.inalid_phone_number)
+            }else{
+                onBoardingViewModel.sendOtp(phoneNumber)
+            }
+
+            Timber.d(phoneNumber)
         }
     }
 
@@ -78,7 +65,7 @@ class SignUpFragment : BaseFragment(){
 
             is Success -> {
                 Timber.d("Success Clicked ")
-                findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToOtpFragment())
+                findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToOtpFragment())
             }
         }
     }
