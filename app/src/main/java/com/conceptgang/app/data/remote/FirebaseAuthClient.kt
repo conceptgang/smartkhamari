@@ -15,8 +15,9 @@ class FirebaseAuthClient @Inject constructor (private val mainActivity: MainActi
 
     private val auth = FirebaseAuth.getInstance().apply { setLanguageCode("en") }
 
-    //private lateinit var storedVerificationId: String
     private var resendToken: PhoneAuthProvider.ForceResendingToken? = null
+
+    val isAuthenticated: Boolean get() = auth.currentUser != null
 
 
     suspend fun signInWithOTP(sendOtpResult: SendOtpResult, otp: String): FirebaseUser {
@@ -51,7 +52,6 @@ class FirebaseAuthClient @Inject constructor (private val mainActivity: MainActi
                 ) {
                     Timber.d("onCodeSent:$verificationId")
 
-                    //storedVerificationId = verificationId
                     resendToken = token
 
                     if (cont.isActive) cont.resumeWith(Result.success(SendOtpResult(verificationId)))
