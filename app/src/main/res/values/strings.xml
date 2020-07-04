@@ -13,4 +13,10 @@
     <string name="name_cant_empty">Name can\'t be empty</string>
     <string name="oops">Oops!</string>
     <string name="something_went_wrong">Something went wrong. Make sure you have working network connection</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="add_new_cow">Add New Cow</string>
+    <string name="add_new_customer">Add New Customer</string>
+    <string name="add_new_sell">Add New Sell</string>
+    <string name="total_customer">Total Customer</string>
+    <string name="total_cows">Total Cows</string>
 </resources>

@@ -9,8 +9,6 @@
         <item name="colorPrimary">@color/green</item>
         <item name="colorError">@color/red</item>
         <item name="colorPrimaryDark">@color/green</item>
-        <item name="colorSurface">@color/surface</item>
-        <item name="colorPrimarySurface">@color/surface</item>
         <item name="android:windowBackground">@color/surface</item>
 
     </style>
