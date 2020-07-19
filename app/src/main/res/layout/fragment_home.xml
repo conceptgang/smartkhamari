@@ -9,7 +9,7 @@
         android:layout_width="@dimen/icon_size"
         android:layout_height="@dimen/icon_size"
         android:layout_marginStart="@dimen/margin_normal"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_big"
         android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,28 +19,29 @@
         android:id="@+id/notificationIcon"
         android:layout_width="@dimen/icon_size"
         android:layout_height="@dimen/icon_size"
-        android:layout_marginTop="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_normal"
         android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@+id/sideNavIcon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sideNavIcon"
         app:srcCompat="@drawable/notification" />
 
     <ImageView
         android:id="@+id/reportIcon"
         android:layout_width="@dimen/icon_size"
         android:layout_height="@dimen/icon_size"
-        android:layout_marginTop="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_normal"
         android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@+id/sideNavIcon"
         app:layout_constraintEnd_toStartOf="@id/notificationIcon"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sideNavIcon"
         app:srcCompat="@drawable/report" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

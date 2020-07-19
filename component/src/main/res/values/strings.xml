@@ -6,4 +6,5 @@
     <string name="close_button">Close Button</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="search_by_customer_id">Search by Customer ID..</string>
 </resources>
