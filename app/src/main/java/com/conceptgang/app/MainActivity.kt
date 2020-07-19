@@ -41,6 +41,9 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
 
+            binding.appbar.visibility = View.GONE
+            binding.searchbar.visibility = View.GONE
+
             when(destination.id){
 
                 R.id.homeFragment -> {

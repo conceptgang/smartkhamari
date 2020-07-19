@@ -39,8 +39,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:overScrollMode="always"
+                android:foregroundTint="@color/green"
                 app:contentScrim="?attr/colorSurface"
                 app:expandedTitleGravity="center"
+                app:expandedTitleTextAppearance="@style/TextAppearance.AppComponent.Expand"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
                 <androidx.appcompat.widget.Toolbar
@@ -56,6 +58,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <com.conceptgang.component.view.SearchBar
+            android:id="@+id/searchbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
