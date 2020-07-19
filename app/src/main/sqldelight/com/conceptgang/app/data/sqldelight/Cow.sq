@@ -1,0 +1,15 @@
+import android.graphics.Bitmap;
+import java.util.Calendar;
+
+CREATE TABLE cow (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    image BLOB as Bitmap NOT NULL,
+    name TEXT NOT NULL,
+    breed TEXT NOT NULL,
+    dob TEXT as Calendar NOT NULL,
+    isFromOutside INTEGER as Boolean NOT NULL,
+    buyingPrice REAL,
+    isOpenForCell INTEGER as Boolean NOT NULL,
+    sellingPrice REAL,
+    isPregnant INTEGER as Boolean NOT NULL
+);

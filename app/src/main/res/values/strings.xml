@@ -19,4 +19,6 @@
     <string name="add_new_sell">Add New Sell</string>
     <string name="total_customer">Total Customer</string>
     <string name="total_cows">Total Cows</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>

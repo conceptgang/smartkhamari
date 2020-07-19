@@ -62,7 +62,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView51"
+                    android:id="@+id/dobTxt"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -91,10 +91,10 @@
                     android:textSize="12dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView51" />
+                    app:layout_constraintTop_toBottomOf="@+id/dobTxt" />
 
                 <TextView
-                    android:id="@+id/textView53"
+                    android:id="@+id/buyingPriceTxt"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -123,7 +123,7 @@
                     android:textSize="12dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView53" />
+                    app:layout_constraintTop_toBottomOf="@+id/buyingPriceTxt" />
 
                 <TextView
                     android:id="@+id/textView61"

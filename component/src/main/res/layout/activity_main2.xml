@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView46"
+            android:id="@+id/navigationTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
@@ -42,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView46">
+            app:layout_constraintTop_toBottomOf="@+id/navigationTitle">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -50,10 +50,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView46">
+                app:layout_constraintTop_toBottomOf="@+id/navigationTitle">
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/cowImage"
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:layout_marginTop="20dp"
@@ -75,10 +75,10 @@
                     android:textSize="12dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+                    app:layout_constraintTop_toBottomOf="@+id/cowImage" />
 
                 <RadioGroup
-                    android:id="@+id/radioGroup"
+                    android:id="@+id/sourceRadioGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -104,7 +104,7 @@
                 </RadioGroup>
 
                 <TextView
-                    android:id="@+id/textView48"
+                    android:id="@+id/nameLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -114,10 +114,10 @@
                     android:textSize="12dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+                    app:layout_constraintTop_toBottomOf="@+id/sourceRadioGroup" />
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/nameEditText"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -131,7 +131,7 @@
                     android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView48" />
+                    app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
 
                 <TextView
                     android:id="@+id/mobile"
@@ -144,7 +144,7 @@
                     android:textSize="12dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText" />
+                    app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
                 <EditText
                     android:id="@+id/editText_phn_no"
@@ -195,7 +195,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView52"
+                    android:id="@+id/buytingPriceLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -208,7 +208,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/editText_address" />
 
                 <TextView
-                    android:id="@+id/textView53"
+                    android:id="@+id/buyingPriceTxt"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -219,7 +219,7 @@
                     android:textColor="@color/surface"
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView52" />
+                    app:layout_constraintTop_toBottomOf="@+id/buytingPriceLabel" />
 
                 <EditText
                     android:id="@+id/editText2"
@@ -231,10 +231,10 @@
                     android:paddingLeft="16dp"
                     android:textColor="@color/textColor"
                     android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView53"
+                    app:layout_constraintBottom_toBottomOf="@+id/buyingPriceTxt"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView53"
-                    app:layout_constraintTop_toTopOf="@+id/textView53" />
+                    app:layout_constraintStart_toEndOf="@+id/buyingPriceTxt"
+                    app:layout_constraintTop_toTopOf="@+id/buyingPriceTxt" />
 
                 <TextView
                     android:id="@+id/buy_price"
@@ -279,7 +279,7 @@
                     app:layout_constraintVertical_bias="1.0" />
 
                 <TextView
-                    android:id="@+id/textView50"
+                    android:id="@+id/dobLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -292,7 +292,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/taka" />
 
                 <TextView
-                    android:id="@+id/textView51"
+                    android:id="@+id/dobTxt"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -308,16 +308,16 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView50" />
+                    app:layout_constraintTop_toBottomOf="@+id/dobLabel" />
 
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginEnd="16dp"
                     android:src="@drawable/calendar"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView51"
-                    app:layout_constraintEnd_toEndOf="@+id/textView51"
-                    app:layout_constraintTop_toTopOf="@+id/textView51" />
+                    app:layout_constraintBottom_toBottomOf="@+id/dobTxt"
+                    app:layout_constraintEnd_toEndOf="@+id/dobTxt"
+                    app:layout_constraintTop_toTopOf="@+id/dobTxt" />
 
                 <TextView
                     android:layout_width="321dp"
@@ -332,7 +332,7 @@
                     app:cornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView51" />
+                    app:layout_constraintTop_toBottomOf="@+id/dobTxt" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
