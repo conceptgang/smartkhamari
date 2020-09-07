@@ -26,7 +26,7 @@ class HomeFragment : BaseFragment(){
         super.onViewCreated(view, savedInstanceState)
 
         binding.newCowBtn.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.globalToCowEditFragment())
+            findNavController().navigate(HomeFragmentDirections.globalToCowEditFragment(null))
         }
     }
 

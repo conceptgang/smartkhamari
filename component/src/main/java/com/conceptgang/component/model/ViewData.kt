@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
+import com.conceptgang.component.util.px
 import java.security.InvalidParameterException
 import java.util.*
 
@@ -15,6 +16,12 @@ sealed class ViewData {
     abstract val tag: Any?
     abstract val epoxyData: EpoxyData
 }
+
+data class EmptyViewData(
+    val padding: Int,
+    override val tag: Any? = null,
+    override val epoxyData: EpoxyData = EpoxyData(horizontal = 0, vertical = 0.px)
+) : ViewData()
 
 data class HomeStateVerticalViewData(
     override val tag: Any? = null,
@@ -37,6 +44,9 @@ data class CowHealthListViewData(
 ) : ViewData()
 
 data class CowProfileViewData(
+    val cowName: ViewString,
+    val cowId: ViewString,
+    val breed: ViewString,
     override val tag: Any? = null,
     override val epoxyData: EpoxyData = EpoxyData.SMALL
 ) : ViewData()

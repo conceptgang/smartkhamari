@@ -12,5 +12,13 @@ import com.conceptgang.app.MainActivity
 
 abstract class BaseFragment : BaseMvRxFragment() {
 
+    val mainActivity: MainActivity by lazy { requireActivity() as MainActivity }
 
+    fun setLoading(isLoading: Boolean){
+        mainActivity.binding.loadingView.visibility = if(isLoading) View.VISIBLE else View.GONE
+    }
+
+    fun showError(error: Throwable){
+
+    }
 }

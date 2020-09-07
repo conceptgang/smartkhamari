@@ -16,8 +16,6 @@ import kotlinx.coroutines.launch
 class SplashFragment : BaseFragment() {
 
     private lateinit var binding: FragmentSplashBinding
-
-    private val mainActivity by lazy { requireActivity() as MainActivity }
     private val firebaseAuthClient = FirebaseAuth.getInstance()
 
     override fun onCreateView(
@@ -37,9 +35,13 @@ class SplashFragment : BaseFragment() {
 
             delay(1000)
 
-            if(firebaseAuthClient.currentUser != null){
-                findNavController().navigate(SplashFragmentDirections.globalToHomeFragment())
-            } else{
+            try {
+                if(firebaseAuthClient.currentUser != null){
+                    findNavController().navigate(SplashFragmentDirections.globalToHomeFragment())
+                } else{
+                    findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToSignInFragment())
+                }
+            } catch (ex: Exception) {
                 findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToSignInFragment())
             }
         }

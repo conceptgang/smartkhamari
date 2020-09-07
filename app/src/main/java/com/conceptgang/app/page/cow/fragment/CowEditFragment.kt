@@ -10,8 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.FragmentResultListener
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.airbnb.mvrx.*
 import com.conceptgang.app.base.BaseFragment
+import com.conceptgang.app.data.local.DateColumnAdapter
 import com.conceptgang.app.data.local.DobColumnAdapter
 import com.conceptgang.app.data.model.FireStorePath
 import com.conceptgang.app.model.Cow
@@ -31,6 +34,9 @@ class CowEditFragment : BaseFragment() {
 
     private val viewModel by fragmentViewModel(CowEditViewModel::class)
     private lateinit var binding: FragmentCowEditBinding
+
+    private val args by navArgs<CowEditFragmentArgs>()
+    private val cow by lazy { args.cow }
 
     val imageRequestCode = 100
     var options = Options.init()
@@ -52,6 +58,19 @@ class CowEditFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val givenCow = cow
+        if (givenCow != null){
+            binding.nameEditText.setText(givenCow.name)
+            binding.breedTxt.setText(givenCow.breed)
+            binding.dobTxt.setText(DateColumnAdapter.encode(givenCow.dob.toDate()))
+            binding.buyingPriceEditTxt.setText("${givenCow.buyingPrice}")
+            binding.outSideRadioButton.isChecked = givenCow.isFromOutside
+            binding.firmRadioButton.isChecked = !givenCow.isFromOutside
+            binding.sellingStatusSwitch.isChecked = givenCow.isOpenForCell
+            binding.sellingPriceEditTxt.setText("${givenCow.sellingPrice}")
+            binding.pregnancySwitch.isChecked = givenCow.isPregnant
+        }
 
         binding.dobTxt.setOnClickListener {
             val datePicker = MaterialDatePicker.Builder.datePicker().build()
@@ -90,16 +109,20 @@ class CowEditFragment : BaseFragment() {
             Pix.start(this, options);
         }
 
+        binding.navigationIcon.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         binding.saveButton.setOnClickListener {
 
             val name = binding.nameEditText.text.toString()
             val breed = binding.breedTxt.text.toString()
             val dob = binding.dobTxt.text.toString()
             val buyingPrice = binding.buyingPriceEditTxt.text.toString().toDouble()
-            val isFromOutside = binding.outSideRadioButton.isSelected
-            val isOpenForSelling = binding.sellingStatusSwitch.isSelected
+            val isFromOutside = binding.outSideRadioButton.isChecked
+            val isOpenForSelling = binding.sellingStatusSwitch.isChecked
             val sellingPrice = binding.sellingPriceEditTxt.text.toString().toDouble()
-            val isPregnant = binding.pregnancySwitch.isSelected
+            val isPregnant = binding.pregnancySwitch.isChecked
 
             val cow = Cow(
                 name = name,
@@ -119,22 +142,21 @@ class CowEditFragment : BaseFragment() {
     }
 
     override fun invalidate() = withState(viewModel) { state ->
-
         when(val isSaved = state.saved){
             is Uninitialized -> {
 
             }
             is Loading -> {
-
+                setLoading(true)
             }
             is Success -> {
-
+                setLoading(false)
+                viewModel.clearState()
+                findNavController().navigate(CowEditFragmentDirections.actionCowEditFragmentToCowDetailFragment(isSaved()))
             }
             is Fail -> {
-                
+                showError(isSaved.error)
             }
-
-
         }.exhaustive
     }
 

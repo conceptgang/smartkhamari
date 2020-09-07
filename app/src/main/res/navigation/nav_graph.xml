@@ -20,9 +20,11 @@
 
     <action
         android:id="@+id/global_to_cowEditFragment"
-        app:destination="@id/cowEditFragment"
-        app:popUpTo="@id/nav_graph"
-        app:popUpToInclusive="true"/>
+        app:destination="@id/cowEditFragment"/>
+
+    <action
+        android:id="@+id/global_to_cowDetailFragment"
+        app:destination="@id/cowDetailFragment"/>
 
 
     <fragment
@@ -79,7 +81,25 @@
     <fragment
         android:id="@+id/cowEditFragment"
         android:name="com.conceptgang.app.page.cow.fragment.CowEditFragment"
-        android:label="CowEditFragment" />
+        android:label="CowEditFragment" >
+        <argument
+            android:name="cow"
+            app:argType="com.conceptgang.app.model.Cow"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_cowEditFragment_to_cowDetailFragment"
+            app:destination="@id/cowDetailFragment"
+            app:popUpTo="@id/cowEditFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cowDetailFragment"
+        android:name="com.conceptgang.app.page.cow.fragment.CowDetailFragment"
+        android:label="CowDetailFragment" >
+        <argument
+            android:name="cow"
+            app:argType="com.conceptgang.app.model.Cow" />
+    </fragment>
 
 
 </navigation>

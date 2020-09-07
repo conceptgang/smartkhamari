@@ -9,40 +9,17 @@ import android.view.View
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import com.conceptgang.app.data.local.DobColumnAdapter
-import com.conceptgang.app.data.local.ImageColumnAdapter
-import com.conceptgang.app.data.remote.FirebaseAuthClient
-import com.conceptgang.app.data.repository.KhamariRepository
-import com.conceptgang.app.data.sqldelight.Cow
 import com.conceptgang.app.databinding.ActivityMainBinding
-import com.fxn.pix.Pix
-import com.squareup.sqldelight.android.AndroidSqliteDriver
-import timber.log.Timber
-import java.util.ArrayList
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
-
-    val firebaseAuthClient by lazy {  FirebaseAuthClient(this) }
-    val khamariRepository by lazy {
-        val sqlDriver = AndroidSqliteDriver(Database.Schema, this, "khamari.db")
-        val database = Database(
-            driver = sqlDriver,
-            cowAdapter = Cow.Adapter(
-                imageAdapter = ImageColumnAdapter,
-                dobAdapter = DobColumnAdapter
-            )
-        )
-
-        return@lazy KhamariRepository(
-            firebaseAuthClient = firebaseAuthClient,
-            database = database
-        )
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,30 +43,36 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
 
-            binding.appbar.visibility = View.GONE
+            binding.collapseView.visibility = View.GONE
             binding.searchbar.visibility = View.GONE
             binding.bottomNav.visibility = View.GONE
 
             when(destination.id){
-
                 R.id.homeFragment -> {
                     binding.bottomNav.visibility = View.VISIBLE
                 }
 
                 R.id.cowListFragment -> {
-
-                    binding.appbar.visibility = View.VISIBLE
+                    binding.collapseView.visibility = View.VISIBLE
                     binding.searchbar.visibility = View.VISIBLE
                     binding.bottomNav.visibility = View.VISIBLE
                 }
+            }
+        }
 
-                R.id.cowEditFragment -> {
+        binding.bottomNav.setOnNavigationItemSelectedListener { item ->
 
-                    binding.bottomNav.visibility = View.VISIBLE
+            when(item.itemId){
+                R.id.bottomNavHome -> {
+
+                }
+
+                R.id.bottomNavCow -> {
+                    navController.navigate(R.id.cowListFragment)
                 }
             }
 
-
+            return@setOnNavigationItemSelectedListener true
         }
 
     }

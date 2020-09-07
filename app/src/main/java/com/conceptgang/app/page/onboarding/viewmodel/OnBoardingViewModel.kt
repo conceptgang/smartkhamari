@@ -32,7 +32,7 @@ class OnBoardingViewModel(state: OnBoardingState, val authClient: FirebaseAuthCl
         ): OnBoardingViewModel? {
 
             val mainActivity = viewModelContext.activity as MainActivity
-            return OnBoardingViewModel(state, mainActivity.firebaseAuthClient)
+            return OnBoardingViewModel(state, FirebaseAuthClient(mainActivity))
         }
     }
 

@@ -30,16 +30,16 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:visibility="visible">
 
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/collapseView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:overScrollMode="always"
+                android:layout_height="200dp"
                 android:foregroundTint="@color/green"
+                android:overScrollMode="always"
                 app:contentScrim="?attr/colorSurface"
                 app:expandedTitleGravity="center"
                 app:expandedTitleTextAppearance="@style/TextAppearance.AppComponent.Expand"
@@ -57,12 +57,21 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+       <!-- <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/homeActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:background="@android:color/transparent"
+            app:elevation="0dp" />-->
+
         <com.conceptgang.component.view.SearchBar
             android:id="@+id/searchbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginHorizontal="@dimen/margin_normal"
+            android:visibility="visible"
             app:layout_anchor="@id/appbar"
             app:layout_anchorGravity="bottom|center" />
 
@@ -80,33 +89,32 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+
+    <FrameLayout
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#40000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/green" />
+
+    </FrameLayout>
     <!--
+            A global loading view can be set like this. When loading view will be visible then
+            other views won't take user input
 
-        <FrameLayout
-            android:id="@+id/loadingView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#40000000"
-            android:clickable="true"
-            android:focusable="true"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ProgressBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:indeterminateTint="@color/colorPrimary" />
-
-        </FrameLayout>
-
-        A global loading view can be set like this. When loading view will be visible then
-        other views won't take user input
-
-    -->
+     -->
 
 
     <com.google.android.material.navigation.NavigationView

@@ -25,6 +25,21 @@ object DobColumnAdapter : ColumnAdapter<Calendar, String> {
     }
 }
 
+object DateColumnAdapter : ColumnAdapter<Date, String> {
+
+    private val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
+
+    override fun decode(databaseValue: String): Date {
+        val calender = Calendar.getInstance()
+        calender.time = formatter.parse(databaseValue)!!
+        return calender.time
+    }
+
+    override fun encode(value: Date): String {
+        return formatter.format(value)
+    }
+}
+
 object ImageColumnAdapter : ColumnAdapter<Bitmap, ByteArray> {
     override fun decode(databaseValue: ByteArray): Bitmap {
         return BitmapFactory.decodeByteArray(databaseValue, 0, databaseValue.size)

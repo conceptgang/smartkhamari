@@ -6,7 +6,6 @@ import com.conceptgang.app.MainActivity
 import com.conceptgang.app.base.BaseViewModel
 import com.conceptgang.app.data.model.FireStorePath
 import com.conceptgang.app.data.remote.FirebaseAuthClient
-import com.conceptgang.app.data.repository.KhamariRepository
 import com.conceptgang.app.model.Cow
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
@@ -14,13 +13,14 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.asDeferred
 import kotlinx.coroutines.tasks.await
+import timber.log.Timber
 import java.lang.Exception
 
 data class CowEditState(
-    val saved: Async<Boolean> = Uninitialized
+    val saved: Async<Cow> = Uninitialized
 ): MvRxState
 
-class CowEditViewModel(state: CowEditState, val repository: KhamariRepository): BaseViewModel<CowEditState>(state){
+class CowEditViewModel(state: CowEditState): BaseViewModel<CowEditState>(state){
 
     companion object: MvRxViewModelFactory<CowEditViewModel, CowEditState>{
 
@@ -31,29 +31,28 @@ class CowEditViewModel(state: CowEditState, val repository: KhamariRepository): 
 
             val activity = viewModelContext.activity<MainActivity>()
 
-            return CowEditViewModel(state, activity.khamariRepository)
+            return CowEditViewModel(state)
         }
     }
 
     fun createCow(cow: Cow){
-
-        val user = FirebaseAuth.getInstance().currentUser!!
-
-        val userCowStore = Firebase.firestore.collection(FireStorePath.user).document(user.uid).collection(FireStorePath.cow)
+        setState { copy(saved = Loading()) }
 
         viewModelScope.launch {
             try {
-                val ref = userCowStore.document()
+                val ref = FireStorePath.userCowStore.document()
                 val newCow = cow.copy(id = ref.id)
                 ref.set(newCow).await()
-                setState { copy(saved = Success(true)) }
+                setState { copy(saved = Success(newCow)) }
             } catch (ex: Exception){
                 setState { copy(saved = Fail(ex)) }
+                Timber.e(ex)
             }
-
         }
     }
 
-
+    fun clearState() {
+        setState { copy(saved = Uninitialized) }
+    }
 }
 
