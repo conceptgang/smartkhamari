@@ -10,16 +10,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.FragmentResultListener
-import com.airbnb.mvrx.fragmentViewModel
-import com.airbnb.mvrx.withState
+import com.airbnb.mvrx.*
 import com.conceptgang.app.base.BaseFragment
 import com.conceptgang.app.data.local.DobColumnAdapter
+import com.conceptgang.app.data.model.FireStorePath
+import com.conceptgang.app.model.Cow
 import com.conceptgang.app.page.cow.viewmodel.CowEditViewModel
 import com.conceptgang.component.databinding.FragmentCowEditBinding
+import com.conceptgang.component.util.exhaustive
 import com.fxn.pix.Options
 import com.fxn.pix.Pix
 import com.fxn.utility.PermUtil
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.firebase.Timestamp
 import timber.log.Timber
 import java.util.*
 
@@ -86,10 +89,53 @@ class CowEditFragment : BaseFragment() {
         binding.cowImage.setOnClickListener {
             Pix.start(this, options);
         }
+
+        binding.saveButton.setOnClickListener {
+
+            val name = binding.nameEditText.text.toString()
+            val breed = binding.breedTxt.text.toString()
+            val dob = binding.dobTxt.text.toString()
+            val buyingPrice = binding.buyingPriceEditTxt.text.toString().toDouble()
+            val isFromOutside = binding.outSideRadioButton.isSelected
+            val isOpenForSelling = binding.sellingStatusSwitch.isSelected
+            val sellingPrice = binding.sellingPriceEditTxt.text.toString().toDouble()
+            val isPregnant = binding.pregnancySwitch.isSelected
+
+            val cow = Cow(
+                name = name,
+                breed = breed,
+                dob = Timestamp(DobColumnAdapter.decode(dob).time),
+                buyingPrice = buyingPrice,
+                isFromOutside = isFromOutside,
+                isOpenForCell = isOpenForSelling,
+                sellingPrice =  sellingPrice,
+                isPregnant = isPregnant,
+                id = FireStorePath.defaultCowID,
+                image = FireStorePath.defaultCowImage
+            )
+
+            viewModel.createCow(cow)
+        }
     }
 
     override fun invalidate() = withState(viewModel) { state ->
 
+        when(val isSaved = state.saved){
+            is Uninitialized -> {
+
+            }
+            is Loading -> {
+
+            }
+            is Success -> {
+
+            }
+            is Fail -> {
+                
+            }
+
+
+        }.exhaustive
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

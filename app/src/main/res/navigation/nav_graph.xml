@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/cowEditFragment">
+    app:startDestination="@id/splashFragment">
 
     <action
         android:id="@+id/global_to_homeFragment"
@@ -15,6 +15,12 @@
     <action
         android:id="@+id/global_to_cowListFragment"
         app:destination="@id/cowListFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true"/>
+
+    <action
+        android:id="@+id/global_to_cowEditFragment"
+        app:destination="@id/cowEditFragment"
         app:popUpTo="@id/nav_graph"
         app:popUpToInclusive="true"/>
 

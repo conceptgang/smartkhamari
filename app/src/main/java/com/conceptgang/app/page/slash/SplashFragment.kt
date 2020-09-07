@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.conceptgang.app.MainActivity
 import com.conceptgang.app.base.BaseFragment
 import com.conceptgang.app.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -17,7 +18,7 @@ class SplashFragment : BaseFragment() {
     private lateinit var binding: FragmentSplashBinding
 
     private val mainActivity by lazy { requireActivity() as MainActivity }
-    private val firebaseAuthClient by lazy { mainActivity.firebaseAuthClient  }
+    private val firebaseAuthClient = FirebaseAuth.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,7 +37,7 @@ class SplashFragment : BaseFragment() {
 
             delay(1000)
 
-            if(firebaseAuthClient.isAuthenticated){
+            if(firebaseAuthClient.currentUser != null){
                 findNavController().navigate(SplashFragmentDirections.globalToHomeFragment())
             } else{
                 findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToSignInFragment())

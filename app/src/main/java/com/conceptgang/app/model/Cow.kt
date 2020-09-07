@@ -1,14 +1,14 @@
 package com.conceptgang.app.model
 
 import android.graphics.Bitmap
-import java.util.*
+import com.google.firebase.Timestamp
 
 data class Cow(
-    val id: Long,
-    val image: Bitmap,
+    val id: String,
+    val image: String,
     val name: String,
     val breed: String,
-    val dob: Calendar,
+    val dob: Timestamp,
     val isFromOutside: Boolean,
     val buyingPrice: Double = 0.0,
     val isOpenForCell: Boolean,
