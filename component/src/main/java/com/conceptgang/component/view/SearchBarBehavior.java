@@ -92,12 +92,12 @@ class SearchBarBehavior extends CoordinatorLayout.Behavior<SearchBar> {
 
         if (rect.bottom <= appBarLayout.getMinimumHeightForVisibleOverlappingContent()) {
             // If the anchor's bottom is below the seam, we'll animate our FAB out
-            child.setVisibility(VISIBLE);
+            //child.setVisibility(VISIBLE);
             child.setTranslationY(24);
 
         } else {
             // Else, we'll animate our FAB back in
-            child.setVisibility(VISIBLE);
+            //child.setVisibility(VISIBLE);
             child.setTranslationY(-(child.getHeight()/2));
 
         }
