@@ -20,6 +20,11 @@ class DefaultViewController(
                     viewData(viewData)
                     viewCallback(callback)
                 }
+                is EmptyViewData -> emptyView {
+                    id("$index EmptyViewData")
+                    viewData(viewData)
+                    viewCallback(callback)
+                }
                 is BioSprayViewData -> bioSprayView {
                     id("$index BioSprayViewData")
                     viewData(viewData)

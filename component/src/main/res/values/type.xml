@@ -17,6 +17,10 @@
         <item name="fontFamily">@font/font_nunito_bold</item><!--34sp-->
     </style>
 
+    <style name="TextAppearance.AppComponent.Expand" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textColor">#ffffff</item><!--34sp-->
+    </style>
+
     <style name="TextAppearance.AppComponent.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="fontFamily">@font/font_nunito_semi_bold</item><!--24sp-->
     </style>

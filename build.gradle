@@ -2,17 +2,18 @@
 apply plugin: "com.github.ben-manes.versions"
 buildscript {
     ext {
-        ANDROID_PLUGIN_VERSION = '4.0.0'
+        ANDROID_PLUGIN_VERSION = '4.0.1'
         KOTLIN_VERSION = '1.3.72'
         NAV_VERSION = '2.2.2'
         GMS_VERSION = '4.3.3'
         CRASHLYTICS_VERSION = '2.0.0'
         VERSIONS_VERSION = '0.28.0'
+        SQL_DELIGHT_VERSION = '1.2.2'
     }
     repositories {
         google()
         jcenter()
-
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$ANDROID_PLUGIN_VERSION"
@@ -23,6 +24,7 @@ buildscript {
         classpath "com.google.gms:google-services:$GMS_VERSION"
         classpath "com.google.firebase:firebase-crashlytics-gradle:$CRASHLYTICS_VERSION"
         classpath "com.github.ben-manes:gradle-versions-plugin:$VERSIONS_VERSION"
+        classpath "com.squareup.sqldelight:gradle-plugin:$SQL_DELIGHT_VERSION"
     }
 }
 
@@ -30,7 +32,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-
+        maven { url 'https://jitpack.io' }
     }
 
     configurations.all {

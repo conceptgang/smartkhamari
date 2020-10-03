@@ -1,0 +1,388 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green">
+
+    <ImageView
+        android:id="@+id/navigationIcon"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/front_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/navigationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Create New Cow Profile"
+        android:textColor="@color/surface"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/navigationIcon"
+        app:layout_constraintStart_toEndOf="@id/navigationIcon"
+        app:layout_constraintTop_toTopOf="@id/navigationIcon" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navigationTitle">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="90dp"
+                android:backgroundTint="?colorSurface"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/navigationTitle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cowConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/navigationTitle">
+
+                    <ImageView
+                        android:id="@+id/cowImage"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/plus_image"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/nameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:text="NAME OF THE COW"
+                        android:textColor="#333333"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cowImage" />
+
+                    <EditText
+                        android:id="@+id/nameEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rectangle"
+                        android:backgroundTint="@color/ground_back"
+                        android:hint="Example: Black Diamond"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1"
+                        android:inputType="textPersonName"
+                        android:paddingHorizontal="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+
+                    <TextView
+                        android:id="@+id/breedLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="BREED"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
+
+                    <TextView
+                        android:id="@+id/breedTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rectangle"
+                        android:backgroundTint="@color/ground_back"
+                        android:paddingHorizontal="16dp"
+                        android:text="Select Breed"
+                        android:textColor="#333333"
+                        android:gravity="start|center"
+                        android:textSize="16sp"
+                        android:drawableEnd="@drawable/down_arrow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/breedLabel" />
+
+                    <TextView
+                        android:id="@+id/dobLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="DATE OF BIRTH"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/breedTxt" />
+
+                    <TextView
+                        android:id="@+id/dobTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rectangle"
+                        android:backgroundTint="@color/ground_back"
+                        android:gravity="start|center"
+                        android:text="Choose Date"
+                        android:textColor="#333333"
+                        android:drawableEnd="@drawable/calendar"
+                        android:paddingHorizontal="16dp"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dobLabel" />
+
+                    <TextView
+                        android:id="@+id/buytingPriceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="BUYING PRICE"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dobTxt" />
+
+                    <TextView
+                        android:id="@+id/buyingPriceTxt"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/two_side"
+                        android:gravity="center"
+                        android:text="৳"
+                        android:textColor="@color/surface"
+                        android:textSize="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/buytingPriceLabel" />
+
+                    <EditText
+                        android:id="@+id/buyingPriceEditTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/other_twoside"
+                        android:hint="Example: 50000"
+                        android:paddingLeft="16dp"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionNext"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="@+id/buyingPriceTxt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/buyingPriceTxt"
+                        app:layout_constraintTop_toTopOf="@+id/buyingPriceTxt" />
+
+                    <TextView
+                        android:id="@+id/sourceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="28dp"
+                        android:text="SOURCE"
+                        android:textColor="#333333"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/buyingPriceTxt" />
+
+                    <RadioGroup
+                        android:id="@+id/sourceRadioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sourceLabel">
+
+                        <RadioButton
+                            android:id="@+id/firmRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Born in the firm"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/outSideRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From outside"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/sellingStatusLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:text="STATUS"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sourceRadioGroup" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/sellingStatusSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="12dp"
+                        android:textColor="#333333"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sellingStatusLabel" />
+
+                    <TextView
+                        android:id="@+id/sellingStatusTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Open For Selling"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/sellingStatusSwitch"
+                        app:layout_constraintStart_toEndOf="@id/sellingStatusSwitch"
+                        app:layout_constraintTop_toTopOf="@id/sellingStatusSwitch" />
+
+                    <TextView
+                        android:id="@+id/sellingPriceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Selling Price"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sellingStatusSwitch" />
+
+                    <TextView
+                        android:id="@+id/sellingPriceTxt"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/two_side"
+                        android:gravity="center"
+                        android:text="৳"
+                        android:textColor="@color/surface"
+                        android:textSize="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sellingPriceLabel" />
+
+                    <EditText
+                        android:id="@+id/sellingPriceEditTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/other_twoside"
+                        android:hint="Example: 50000"
+                        android:paddingLeft="16dp"
+                        android:inputType="numberDecimal"
+                        android:imeOptions="actionNext"
+                        android:textColor="@color/textColor"
+                        app:layout_constraintBottom_toBottomOf="@+id/sellingPriceTxt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/sellingPriceTxt"
+                        app:layout_constraintTop_toTopOf="@+id/sellingPriceTxt" />
+
+                    <TextView
+                        android:id="@+id/pregnancyLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:text="Pregnancy Status"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sellingPriceTxt" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/pregnancySwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="12dp"
+                        android:textColor="#333333"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pregnancyLabel" />
+
+                    <TextView
+                        android:id="@+id/pregnancySwitchTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Pregnant"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/pregnancySwitch"
+                        app:layout_constraintStart_toEndOf="@id/pregnancySwitch"
+                        app:layout_constraintTop_toTopOf="@id/pregnancySwitch" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/saveButton"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginVertical="24dp"
+                        android:backgroundTint="@color/green"
+                        android:text="SAVE"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pregnancySwitch" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_medium">24dp</dimen>
+    <dimen name="margin_big">32dp</dimen>
+    <dimen name="margin_big_extra">40dp</dimen>
+    <dimen name="navigation_icon_size">25dp</dimen>
 
     <dimen name="demo_margin_horizontal">16dp</dimen>
     <dimen name="demo_margin_vertical">16dp</dimen>
+    <dimen name="button_height_normal">42dp</dimen>
+
+    <dimen name="text_sign_height">30dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="home_card_height">120dp</dimen>
 </resources>

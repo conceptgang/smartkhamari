@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.squareup.sqldelight'
 
 android {
     compileSdkVersion rootProject.COMPILE_SDK_VERSION
@@ -43,6 +44,18 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
 }
 
 dependencies {
@@ -52,6 +65,9 @@ dependencies {
     implementation libs.appcompat
     implementation libs.coil
     implementation libs.constraintLayout
+    implementation libs.coroutine
+    implementation libs.coroutine_android
+    implementation libs.coroutine_play
     implementation libs.dagger
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt           libs.dagger_compiler
@@ -77,6 +93,13 @@ dependencies {
     implementation libs.recyclerview
     implementation libs.retrofit
     implementation libs.retrofit_moshi
+    implementation libs.sqldelight
+    implementation libs.sqldelight_coroutine
+    implementation libs.timber
+    implementation 'com.poovam:pin-edittext-field:1.2.1'
+    implementation 'com.google.firebase:firebase-auth-ktx:19.3.2'
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.6.0'
+    implementation 'com.fxn769:pix:1.5.3'
 
     // Test Libraries
     testImplementation libs.junit

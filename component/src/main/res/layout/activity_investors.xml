@@ -1,0 +1,569 @@
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:backgroundTint="@color/surface">
+
+        <TextView
+            android:id="@+id/textView97"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:background="@drawable/four_corner"
+            android:gravity="center"
+            android:text="Products"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/front_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/pluss"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/textView97"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView97">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="66dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/rectangle"
+                    android:backgroundTint="#E6EFE8"
+                    android:orientation="horizontal"
+                    android:paddingLeft="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/search" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:background="@null"
+                        android:hint="Search by Expense.."
+                        android:textColor="@color/textColor"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/rectangle"
+                    android:backgroundTint="@color/green"
+                    android:src="@drawable/menu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView7"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/fiveradius"
+                    android:backgroundTint="@color/green"
+                    android:gravity="center"
+                    android:text="INVESTORS"
+                    android:textColor="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="37dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/fiveradius"
+
+                    android:gravity="center"
+                    android:text="INVESMENT"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView8"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView7">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView26"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/man"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView98"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Sergio Ramos"
+                    android:textColor="#737373"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView26"
+                    app:layout_constraintTop_toTopOf="@+id/imageView26" />
+
+                <TextView
+                    android:id="@+id/textView99"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="CUSID12354"
+                    android:textColor="@color/textColor"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView98"
+                    app:layout_constraintTop_toBottomOf="@+id/textView98" />
+
+                <TextView
+                    android:id="@+id/textView124"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Joining date: "
+                    android:textColor="@color/green"
+                    android:textSize="11dp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="@+id/textView99"
+                    app:layout_constraintTop_toBottomOf="@+id/textView99" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14 Apr, 2020"
+                    android:textColor="@color/green"
+                    android:textSize="11dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView124"
+                    app:layout_constraintStart_toEndOf="@+id/textView124"
+                    app:layout_constraintTop_toTopOf="@+id/textView124" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TYPE: "
+                    android:textColor="#737373"
+                    android:textSize="11dp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="@+id/textView124"
+                    app:layout_constraintTop_toBottomOf="@+id/textView124" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REGULAR INVESTOR"
+                    android:textColor="#737373"
+                    android:textSize="11dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView1"
+                    app:layout_constraintStart_toEndOf="@+id/textView1"
+                    app:layout_constraintTop_toTopOf="@+id/textView1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView9"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView8">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView27"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/man"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Sergio Ramos"
+                    android:textColor="#737373"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView27"
+                    app:layout_constraintTop_toTopOf="@+id/imageView27" />
+
+                <TextView
+                    android:id="@+id/textView101"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="CUSID12354"
+                    android:textColor="@color/textColor"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView100"
+                    app:layout_constraintTop_toBottomOf="@+id/textView100" />
+
+                <TextView
+                    android:id="@+id/textView125"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Joining date: "
+                    android:textColor="@color/green"
+                    android:textSize="11dp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="@+id/textView101"
+                    app:layout_constraintTop_toBottomOf="@+id/textView101" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14 Apr, 2020"
+                    android:textColor="@color/green"
+                    android:textSize="11dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView125"
+                    app:layout_constraintStart_toEndOf="@+id/textView125"
+                    app:layout_constraintTop_toTopOf="@+id/textView125" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TYPE: "
+                    android:textColor="#737373"
+                    android:textSize="11dp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="@+id/textView125"
+                    app:layout_constraintTop_toBottomOf="@+id/textView125" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REGULAR INVESTOR"
+                    android:textColor="#737373"
+                    android:textSize="11dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                    app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView10"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView9">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView28"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/man"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView102"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Sergio Ramos"
+                    android:textColor="#737373"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView28"
+                    app:layout_constraintTop_toTopOf="@+id/imageView28" />
+
+                <TextView
+                    android:id="@+id/textView103"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="CUSID12354"
+                    android:textColor="@color/textColor"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView102"
+                    app:layout_constraintTop_toBottomOf="@+id/textView102" />
+
+                <TextView
+                    android:id="@+id/textView126"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Joining date: "
+                    android:textColor="@color/green"
+                    android:textSize="11dp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="@+id/textView103"
+                    app:layout_constraintTop_toBottomOf="@+id/textView103" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14 Apr, 2020"
+                    android:textColor="@color/green"
+                    android:textSize="11dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView126"
+                    app:layout_constraintStart_toEndOf="@+id/textView126"
+                    app:layout_constraintTop_toTopOf="@+id/textView126" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TYPE: "
+                    android:textColor="#737373"
+                    android:textSize="11dp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="@+id/textView126"
+                    app:layout_constraintTop_toBottomOf="@+id/textView126" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REGULAR INVESTOR"
+                    android:textColor="#737373"
+                    android:textSize="11dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView11"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView10">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView29"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/man"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView104"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Sergio Ramos"
+                    android:textColor="#737373"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView29"
+                    app:layout_constraintTop_toTopOf="@+id/imageView29" />
+
+                <TextView
+                    android:id="@+id/textView105"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="CUSID12354"
+                    android:textColor="@color/textColor"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView104"
+                    app:layout_constraintTop_toBottomOf="@+id/textView104" />
+
+                <TextView
+                    android:id="@+id/textView128"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Joining date: "
+                    android:textColor="@color/green"
+                    android:textSize="11dp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="@+id/textView105"
+                    app:layout_constraintTop_toBottomOf="@+id/textView105" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14 Apr, 2020"
+                    android:textColor="@color/green"
+                    android:textSize="11dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView128"
+                    app:layout_constraintStart_toEndOf="@+id/textView128"
+                    app:layout_constraintTop_toTopOf="@+id/textView128" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TYPE: "
+                    android:textColor="#737373"
+                    android:textSize="11dp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="@+id/textView128"
+                    app:layout_constraintTop_toBottomOf="@+id/textView128" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REGULAR INVESTOR"
+                    android:textColor="#737373"
+                    android:textSize="11dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -8,6 +8,7 @@ import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 class MainApp: Application(){
@@ -24,6 +25,11 @@ class MainApp: Application(){
 
     override fun onCreate() {
         super.onCreate()
+
+        if (BuildConfig.DEBUG) {
+            Timber.uprootAll()
+            Timber.plant(Timber.DebugTree())
+        }
 
 
         /*

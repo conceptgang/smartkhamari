@@ -62,7 +62,13 @@ class CowProfileView : MaterialCardView {
     @AfterPropsSet
     fun setup() {
 
+        binding.cowName.text = viewData.cowName.getValue(context)
+        binding.cowID.text = viewData.cowId.getValue(context)
+        binding.breedText.text = viewData.breed.getValue(context)
 
+        setOnClickListener {
+            viewCallback?.invoke(viewIndex, viewData, viewData.tag)
+        }
     }
 
 }

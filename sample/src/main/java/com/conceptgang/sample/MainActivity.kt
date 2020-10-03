@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.fragment_cow_edit)
 
         val layoutList = ArrayList<Pair<String, Class<out Fragment>>>()
         layoutList.add(Pair("Raw Comp", RawComponentFragment::class.java))

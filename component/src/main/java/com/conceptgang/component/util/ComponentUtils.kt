@@ -232,3 +232,7 @@ fun getKeyboardHeight(imm: InputMethodManager): Int =
         .java
         .getMethod("getInputMethodWindowVisibleHeight")
         .invoke(imm) as Int
+
+
+val String.isValidPhoneNumber get()  = "(01)[0-9]{9}$".toRegex().matches(this)
+val String.isValidPhoneNumberWithCode get()  = "(\\+88)(01)[0-9]{9}$".toRegex().matches(this)

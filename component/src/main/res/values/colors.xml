@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="textColor">#AEAEAE</color>
+    <color name="textColor">#505050</color>
     <color name="orange">#F68C14</color>
     <color name="red">#FF4B2E</color>
+    <color name="blue">#1858AE</color>
+    <color name="black">#333333</color>
     <color name="green">#3AB54A</color>
     <color name="surface">#F3F3F3</color>
     <color name="ground_back">#E6EFE8</color>
+    <color name="zh_dialog_bg">#E6FFFFFF</color>
 </resources>
